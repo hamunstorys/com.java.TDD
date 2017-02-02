@@ -2,12 +2,12 @@ package com.money;
 
 public class Franc extends Money {
 
-	public Franc(int amount) {
-		setAmount(amount);
-	}
+    public Franc(int amount) {
+    	setAmount(amount);
+    }
 
-	public Franc times(int multiplyer) {
-		return new Franc(getAmount() * multiplyer);
-	}
+    public Money times(int multiplier) {
+        return new Franc(getAmount() * multiplier);
+    }
 
 }

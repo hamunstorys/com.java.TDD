@@ -1,30 +1,31 @@
 package com.money;
 
-public class Money {
+public abstract class Money {
 
-	private int amount;
+    private int amount;
 
-	@Override
-	public boolean equals(Object obj) {
+    public static Money dollar(int amount) {
+        return new Dollar(amount);
+    }
 
-		Money money = (Money) obj;
+    public static Money franc(int amount) {
+        return new Franc(amount);
+    }
 
-		System.out.println("money.amount:" + money.amount);
-		System.out.println("this.amount:" + this.amount);
+    public abstract Money times(int times);
 
-		return money.amount == this.amount;
-	}
-
-	/* getter */
-
-	public int getAmount() {
-		return amount;
-	}
-
-	/* setter */
+    @Override
+    public boolean equals(Object o) {
+        Money money = (Money) o;
+        return amount == money.amount && getClass().equals(money.getClass());
+    }
 
 	public void setAmount(int amount) {
 		this.amount = amount;
+	}
+	
+	public int getAmount() {
+		return amount;
 	}
 
 }

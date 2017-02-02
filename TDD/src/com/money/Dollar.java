@@ -6,8 +6,8 @@ public class Dollar extends Money {
 		setAmount(amount);
 	}
 
-	public Dollar times(int multiplyer) {
-		return new Dollar(getAmount() * multiplyer);
+	public Money times(int multiplier) {
+		return new Dollar(getAmount() * multiplier);
 	}
 
 }
