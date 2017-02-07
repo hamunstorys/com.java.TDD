@@ -3,6 +3,7 @@ package com.test;
 import org.junit.Test;
 
 import com.money.Dollar;
+import com.money.Franc;
 
 import junit.framework.TestCase;
 
@@ -15,6 +16,15 @@ public class MoneyTest extends TestCase {
 		assertEquals(new Dollar(10), five.times(2));
 
 		assertEquals(new Dollar(15), five.times(3));
+	}
+
+	@Test
+	public void testFrancMultiplication() {
+		Franc five = new Franc(5);
+
+		assertEquals(new Franc(10), five.times(2));
+
+		assertEquals(new Franc(15), five.times(3));
 	}
 
 	@Test
