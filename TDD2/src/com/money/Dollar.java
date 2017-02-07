@@ -13,4 +13,9 @@ public class Dollar {
 
 	}
 
+	public boolean equals(Object object) {
+		Dollar dollar = (Dollar) object;
+		return amount == dollar.amount;
+	}
+
 }
