@@ -2,10 +2,15 @@ package com.money;
 
 public class Dollar {
 
-	int amount;
+	public int amount;
 
-	public void Dollar(int multiplier) {
-		this.amount *= multiplier;
+	public Dollar(int amount) {
+		this.amount = amount;
+	}
+
+	public Dollar times(int multiplier) {
+		return new Dollar(amount * multiplier);
+
 	}
 
 }
