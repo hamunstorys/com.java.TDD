@@ -28,9 +28,13 @@ public class Money implements Expression {
 
 	}
 
-	public Expression plus(int addend) {
-		return new Money(amount * addend, currency);
+	public Expression plus(Money addend) {
+		return new Sum(this, addend);
 
+	}
+
+	public Money reduce(String to) {
+		return this;
 	}
 
 	public String toString() {
@@ -40,11 +44,6 @@ public class Money implements Expression {
 	public boolean equals(Object object) {
 		Money money = (Money) object;
 		return amount == money.amount && currency.equals(money.currency);
-	}
-
-	public Money plus(Money addend) {
-
-		return new Money(amount + addend.amount, currency);
 	}
 
 }
