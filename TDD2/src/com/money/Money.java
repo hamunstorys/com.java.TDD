@@ -1,6 +1,6 @@
 package com.money;
 
-public class Money {
+public class Money implements Expression {
 	protected int amount;
 	protected String currency;
 
@@ -28,6 +28,11 @@ public class Money {
 
 	}
 
+	public Expression plus(int addend) {
+		return new Money(amount * addend, currency);
+
+	}
+
 	public String toString() {
 		return amount + " " + currency;
 	}
@@ -35,6 +40,11 @@ public class Money {
 	public boolean equals(Object object) {
 		Money money = (Money) object;
 		return amount == money.amount && currency.equals(money.currency);
+	}
+
+	public Money plus(Money addend) {
+
+		return new Money(amount + addend.amount, currency);
 	}
 
 }
