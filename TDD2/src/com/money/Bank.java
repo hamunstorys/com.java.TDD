@@ -13,7 +13,8 @@ public class Bank {
 	}
 
 	public int rate(String from, String to) {
-		if(from.equals(to)) return 1;
+		if (from.equals(to))
+			return 1;
 		Integer rate = (Integer) rates.get(new Pair(from, to));
 		return rate.intValue();
 	}
